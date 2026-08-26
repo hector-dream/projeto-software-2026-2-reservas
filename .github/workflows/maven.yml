@@ -50,4 +50,4 @@ jobs:
         script: |
           docker stop reservas
           docker rm --force reservas
-          docker run  -d -p 8081:8081 --name reservas --network rede -e DB_HOST=postgres-aula hector0/pagamento-ci:${{ github.sha }}
+          docker run  -d -p 8081:8081 --name reservas --network rede -e DB_PASSWORD -e DB_HOST=postgres-aula hector0/pagamento-ci:${{ github.sha }}
